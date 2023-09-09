@@ -1,0 +1,62 @@
+import java.sql.SQLOutput;
+import java.util.*;
+public class Student_Grade_Calculator {
+    public static void main(String[] args) {
+        System.out.println("Enter Marks Obtained in 5 subjects [OUT OF 100]: ");
+
+        System.out.println("MATHS");
+        Scanner sc =  new Scanner (System.in);
+        float MATHS = sc.nextFloat();
+
+        System.out.println("ENGLISH");
+        float  ENGLISH = sc.nextFloat();
+
+        System.out.println("HINDI");
+        float HINDI = sc.nextFloat();
+
+        System.out.println("SCIENCE");
+        float SCIENCE = sc.nextFloat();
+
+        System.out.println("GEOGRAPHY");
+        float GEOGRAPHY = sc.nextFloat();
+
+        System.out.println("----------------------------------------------------------------------");
+
+        float Sum = (MATHS + ENGLISH + HINDI + SCIENCE + GEOGRAPHY);
+        System.out.println("Total Marks Obtained :" + Sum);
+
+        float Avg_Percentage = (Sum/5);
+        System.out.println("Avg Percentage : " + Avg_Percentage);
+
+        if (Avg_Percentage >= 91 && Avg_Percentage <= 100)
+        {
+            System.out.println("Grade = A+");
+        }
+        else if (Avg_Percentage >=81 && Avg_Percentage <= 90)
+        {
+            System.out.println("Grade = A");
+        }
+        else if (Avg_Percentage >=71 && Avg_Percentage <= 80)
+        {
+            System.out.println("Grade = B");
+        }
+        else if (Avg_Percentage >=61 && Avg_Percentage <= 70)
+        {
+            System.out.println("Grade = C");
+        }
+        else if (Avg_Percentage >= 51 && Avg_Percentage <= 60)
+        {
+            System.out.println("Grade = D");
+        }
+        else if (Avg_Percentage >= 41 && Avg_Percentage <= 50)
+        {
+            System.out.println("Grade = E");
+        }
+        else
+        {
+            System.out.println("Grade = F");
+        }
+
+
+    }
+}
