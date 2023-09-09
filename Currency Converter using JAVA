@@ -1,0 +1,42 @@
+import java.util.*;
+
+public class Currency_Converter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        double usdToEurRate = 0.85;
+        double usdToGbpRate = 0.72;
+
+        System.out.println("Welcome to Currency Converter!");
+        System.out.println("Available Currencies:");
+        System.out.println("1. USD (US Dollar)");
+        System.out.println("2. EUR (Euro)");
+        System.out.println("3. GBP (British Pound)");
+
+        System.out.print("Enter the currency you want to convert from (1/2/3): ");
+        int sourceCurrency = scanner.nextInt();
+
+        System.out.print("Enter the amount in the source currency: ");
+        double amount = scanner.nextDouble();
+
+        System.out.print("Enter the currency you want to convert to (1/2/3): ");
+        int targetCurrency = scanner.nextInt();
+
+        double result = 0.0;
+
+        if (sourceCurrency == 1 && targetCurrency == 2) {
+            result = amount * usdToEurRate;
+        } else if (sourceCurrency == 1 && targetCurrency == 3) {
+            result = amount * usdToGbpRate;
+        } else if (sourceCurrency == 2 && targetCurrency == 1) {
+            result = amount / usdToEurRate;
+        } else if (sourceCurrency == 3 && targetCurrency == 1) {
+            result = amount / usdToGbpRate;
+        } else {
+            System.out.println("Invalid currency selection.");
+            System.exit(1);
+        }
+
+        System.out.println("Converted amount: " + result);
+    }
+}
